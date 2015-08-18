@@ -1,16 +1,16 @@
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class UdsEchoServerHandler extends ChannelInboundHandlerAdapter { // (1)
+public class UdsEchoServerHandler extends ChannelInboundHandlerAdapter { 
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)
+    public void channelRead(ChannelHandlerContext ctx, Object msg) { 
         ctx.write(msg);
         ctx.flush(); 
     }
     
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) { // (4)
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) { 
         cause.printStackTrace();
         ctx.close();
     }

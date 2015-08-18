@@ -1,11 +1,11 @@
 # README
 
-# Build
+## Build
  ant
 
-# Run server
+## Run server
  ant exec
 
-# Run clent
+## Run clent
   ruby src/client.rb 
 
