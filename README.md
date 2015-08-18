@@ -6,6 +6,6 @@
 ## Run server
  ant exec
 
-## Run clent
+## Run client
   ruby src/client.rb 
 
