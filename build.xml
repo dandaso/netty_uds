@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project default="default" basedir="./src">
+  <property name="source" value="./" />
+  <property name="dest" value="../build/classes" />
+  <property name="netty" value="../build/netty.jar" />
+
+  <path id="classpath">
+    <fileset id="class" dir="../lib">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+  <property name="classpath" refid="classpath" />
+  <pathconvert pathsep=" " dirsep="/" property="jar.classpath" refid="classpath" />
+
+  <target name="default" description="default build">
+    <jar basedir="${dest}" jarfile="${netty}">
+      <zipgroupfileset dir="../lib" includes="*.jar" />
+      <manifest>
+        <attribute name="Main-Class" value="UdsEchoServer"/>
+      </manifest>
+    </jar>
+    <javac srcdir="${source}" destdir="${dest}" debug="on" optimize="off">
+      <classpath refid="classpath" />
+    </javac>
+  </target>
+
+  <target name="exec" description="execute program">
+     <java jar="${netty}" fork="yes" >
+        <classpath>
+          <path refid="classpath" />
+        </classpath>
+     </java>
+  </target>
+</project>
