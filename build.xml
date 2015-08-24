@@ -17,7 +17,6 @@
       <zipgroupfileset dir="../lib" includes="*.jar" />
       <manifest>
         <attribute name="Main-Class" value="UdsEchoServer"/>
-        <attribute name="Class-Path" value="${netty}"/>
       </manifest>
     </jar>
   </target>
@@ -28,5 +27,8 @@
           <path refid="classpath" />
         </classpath>
      </java>
+     <javac srcdir="${source}" destdir="${dest}" debug="on" optimize="off">
+       <classpath refid="classpath" />
+     </javac>
   </target>
 </project>
