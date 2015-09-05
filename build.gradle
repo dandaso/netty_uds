@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'eu.appsatori.fatjar'
+
+repositories {
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "eu.appsatori:gradle-fatjar-plugin:0.3"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib/main', include: '*.jar')
+}

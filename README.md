@@ -1,11 +1,11 @@
 # README
 
 ## Build
- ant
+ ./gradlew clean fatJar
 
 ## Run server
- ant exec
+ java -cp build/libs/netty_uds.jar UdsEchoServer
 
 ## Run client
-  ruby src/client.rb 
+ ruby tool/client.rb
 
