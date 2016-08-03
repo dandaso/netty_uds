@@ -1,5 +1,5 @@
 # README
- unix domain socket server with netty
+ netty echo server with unix domain socket
  
 ## Build
  ./gradlew clean fatJar
